@@ -1,14 +1,14 @@
 import TelegramBot from 'node-telegram-bot-api';
+import 'dotenv/config';
+const BOT_TOKEN = process.env.BOT_TOKEN as string;
 
-// Replace 'YOUR_BOT_TOKEN' with the token you received from BotFather
-const BOT_TOKEN = '8183087849:AAFBDJqX_uxbpH0QwOeReXHQ6Es90zBljjA';
 
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(BOT_TOKEN, { polling: true });
 
 // Command handler for '/start'
 bot.onText(/\/start/, (msg) => {
-  bot.sendMessage(msg.chat.id, 'Hello! I am your TypeScript bot. Type /help for commands.');
+  bot.sendMessage(msg.chat.id, 'Hello! I am your Helper from ZeroOne CodeClub. Type /help for commands.');
 });
 
 // Command handler for '/help'
